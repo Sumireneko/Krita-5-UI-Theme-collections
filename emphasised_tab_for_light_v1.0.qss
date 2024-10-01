@@ -1,0 +1,150 @@
+/*  ============================================================
+	Emphasised tab for light theme v1.0
+	Custom QT Stylesheet for Krita 5 style-sheet-loader
+
+	Author : L.Sumireneko.M
+	============================================================
+	
+	This file is customize GUI layout of Krita.(Above Krita version 5.20~)
+	This file should be load by style-sheet-loader-extension for Krita
+		https://krita-artists.org/t/plugin-style-sheet-loader-extension/62955
+		https://invent.kde.org/freyalupen/style-sheet-loader-extension	
+		
+	[How to use this?]
+		1.Install style-sheet-loader-extension the plugin for Krita.(into Kita plugin folder)
+		2.Put checkmark for the plugin, In Krita preferences(congigure Krita)
+			-> Python Plugin Manager, find "Style Sheet Loader" and check it.
+		3.Restart Krita
+		4.Tools > Script > Load style sheet, and open "Style Sheet Loader" dialog.
+		5.Load this file = Qt style sheet (.qss) file by file selector icon in the dialog.
+		 You can keep apply a favorite stylesheet from next - 
+			time if you checked "Load on start up" in the dialog.
+
+	[Tips] If you want apply any style,it can use none.qss
+			(It was text file that discribed comment out only,and do nothing)
+	
+	[Tips]
+		Also This Style sheet can use with color schemes by Theme creator extension together.
+		https://krita-artists.org/t/plugin-theme-creator-extension/62953/2
+		https://invent.kde.org/freyalupen/theme-creator-extension/
+		
+		Thanks for Freya Lupen the author who created both of plugins. :D
+
+	[FYI:QT stylesheet reference]
+		https://doc.qt.io/qt-6/stylesheet-reference.html#separator-sub 
+		https://doc.qt.io/qt-6/stylesheet-examples.html#customizing-qtabwidget-and-qtabbar
+
+*/
+
+
+
+
+/* ========================================================== 
+	Tool Buttons (Buket,Lasso,Pen etc.)
+   ========================================================== */
+/* Tool Buttons default : ツールボタン */
+QToolButton {
+    border: 0px solid #ccc;
+    border-radius: 3px;
+	padding:4px;
+	marign:0;
+}
+/* Toole Button (Pressed) : ツールボタンを押した状態 */
+QToolButton:checked {
+    border: 1px solid #555;
+    border-radius: 3px;
+	padding:4px;
+	marign:0;background-color:#aaa;
+}
+
+
+
+
+/* =========================== 
+			Tab Design
+   =========================== */
+/* Tab (background) : タブ背景 */
+QTabBar{  background-color:#888;}
+
+
+/* Tab (Selected) : 選択中のタブ */
+QTabBar::tab:selected {
+   border-color:#ddd;padding:4px;padding-left:15px;padding-right:15px;
+   background-color:#ddd;border: 2px solid #ddd;
+   border-bottom-color:#cad;border-bottom-width:5px;
+   color:#333;
+}
+
+/* Tab (Not selected) : 未選択のタブ */
+QTabBar::tab {
+    border: 1px solid #777;margin-top:4px;
+    padding:2px;
+	background-color:#aaa;
+	color:#333; border-bottom-color:#C2C7CB;
+	padding-left:15px;padding-right:15px;
+
+}
+
+/* ========================================================== 
+	Text Input area(Now not used)  : 入力欄 (使用していない)
+   ========================================================== */
+/* テキスト欄 
+QLineEdit{background:#888;border:3px inset #789;}
+*/
+
+/* ========================================================== 
+	Button(Now not used) : ボタン(使用していない)
+   ========================================================== */
+/* QPushButton,QComboBox{background:#aaa;} */
+
+/* ========================================== 
+	For Miscelleneous GUI Element
+   ========================================== */
+/* Selection Hi-light : 大抵の選択要素 */
+*::item:selected{background-color:#aac;color:555;}
+
+
+
+/* Background of Layer name etc (OFF) :  レイヤー名とかの背景 */
+QAbstractItemView {
+	 /*  margin:1px;
+	   background-color:#ddd;padding:0px; */
+}
+
+/* ToolBar : ツールバー */
+QToolBar{ background-color:#bbb; }
+
+/* Status Bar :ステータスバー */
+QStatusBar{background:#bbb;border: 2px solid #aaa;border-top-color:#555;}
+
+/* Separator :  セパレータ */
+QMainWindow::separator{background:#777;border:0px solid #777}
+QMainWindow::separator:horizontal{height:15px;}
+
+/* ScrollBar and Handle : スクロールバー */
+QScrollBar:horizontal{background:#ccc;}
+QScrollBar:vertical{background:#ccc;}
+QScrollBar::handle:horizontal,QScrollBar::handle:vertical
+{ background:#888;border:3px solid #ccc;  }
+
+
+QComboBox:item:hover{padding-left:3px;} 
+
+
+/* ========================================== 
+	Debug
+   ========================================== */
+/*  Frame Element (for Debug) */
+/*
+
+QFrame{
+ border:2px solid green; border-radius:4px; padding:2px;
+}
+QFrame>QFrame>QFrame{
+ border:2px solid green; border-radius:4px; padding:2px;
+}
+QDockWidget QWidget {border:2px solid green;}
+
+   */
+
+ 

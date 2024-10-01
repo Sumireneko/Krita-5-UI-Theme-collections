@@ -1,0 +1,167 @@
+/*  ============================================================
+	style for Dark themes v1.0
+	Custom QT Stylesheet for Krita 5 style-sheet-loader
+
+	Author : L.Sumireneko.M
+	============================================================
+	
+	This file is customize GUI layout of Krita.(Above Krita version 5.20~)
+	This file should be load by style-sheet-loader-extension for Krita
+		https://krita-artists.org/t/plugin-style-sheet-loader-extension/62955
+		https://invent.kde.org/freyalupen/style-sheet-loader-extension	
+		
+	[How to use this?]
+		1.Install style-sheet-loader-extension the plugin for Krita.(into Kita plugin folder)
+		2.Put checkmark for the plugin, In Krita preferences(congigure Krita)
+			-> Python Plugin Manager, find "Style Sheet Loader" and check it.
+		3.Restart Krita
+		4.Tools > Script > Load style sheet, and open "Style Sheet Loader" dialog.
+		5.Load this file = Qt style sheet (.qss) file by file selector icon in the dialog.
+		 You can keep apply a favorite stylesheet from next - 
+			time if you checked "Load on start up" in the dialog.
+
+	[Tips] If you want apply any style,it can use none.qss
+			(It was text file that discribed comment out only,and do nothing)
+	
+	[Tips]
+		Also This Style sheet can use with color schemes by Theme creator extension together.
+		https://krita-artists.org/t/plugin-theme-creator-extension/62953/2
+		https://invent.kde.org/freyalupen/theme-creator-extension/
+		
+		Thanks for Freya Lupen the author who created both of plugins. :D
+
+	[FYI:QT stylesheet reference]
+		https://doc.qt.io/qt-6/stylesheet-reference.html#separator-sub 
+		https://doc.qt.io/qt-6/stylesheet-examples.html#customizing-qtabwidget-and-qtabbar
+
+*/
+
+/* =========================== 
+			Tab Design
+   =========================== */
+/* Tab (background) : タブ背景 */
+QTabBar{background-color:#333;margin-top:0px;}
+
+/* Tab (Selected) : 選択中のタブ */
+QTabBar::tab:selected {
+	border-top-left-radius:8px;border-top-right-radius:8px;
+	color:#cccc00;
+	border: 2px solid #aabbcc;
+	background-color:qlineargradient(x1:0, y1:0, x2:0 y2:1,stop:0 #aaaa00, stop:0.4 #474747);
+	border-top-color: #cccc00;
+	border-top-width: 3px;border-bottom-width:1px;
+	border-bottom-color: #474747;
+	padding:4px;padding-bottom:1px;
+}
+
+/* Tab (Not selected) : 未選択のタブ */
+QTabBar::tab{
+	border-top-left-radius:8px;border-top-right-radius:8px;
+	color:#666666;
+	border: 2px solid #333333;
+	background-color:#252525;
+	border-bottom-color: #474747;
+	padding:4px;margin-top:5px;
+}
+
+
+
+/* =========================== 
+			CheckBox
+   =========================== */
+/* チェックボックスの色  */
+QCheckBox::indicator:unchecked,QCheckBox::indicator:unchecked {
+	background-color:#777;  /* Chebkbox color : チェックボックスの色  */
+}
+
+/* ========================================== 
+	ConboBox, Drop Down Menu and Button
+   ========================================== */
+/* Dropdown menu and Button color(hover)  : ドロップダウンやボタンの色 
+QSpinBox:hover,QPushButton:hover{
+	 border:2px none #880;	 
+}
+/* Containt in the drop down menu : ドロップダウンメニューの中身*/
+QComboBox QAbstractItemView{
+	background-color:#334;
+	border: 2px solid #bb9900;
+}
+QComboBox:item:hover{background-color:#005;padding-left:3px;} 
+ 
+/* ========================================================== 
+	Tool Buttons (Buket,Lasso,Pen etc.)
+   ========================================================== */
+/* Tool Buttons default : ツールボタン */
+QToolButton{
+	border-radius:3px;
+	/* background-color:#555; */
+	border:1px solid #444;
+	width:auto;
+	padding:3px;
+}
+
+/* Toole Button (Pressed) : ツールボタンを押した状態 */
+QToolButton:checked{
+	border-radius:3px;
+	background-color:#770;
+	border:1px solid #778;
+	width:auto;
+	padding:0px;
+}
+
+/* ========================================================== 
+	Text Input area (Input for path , search keyword etc) : 入力欄 
+   ========================================================== */
+QLineEdit,QTextEdit{
+	selection-background-color:darkblue;color:#444;
+	border: 3px inset #789;padding:1px;background:#ccc;border-left-color:#345;
+	border-left-width:5px;border-top-width:4px;border-top-color:#234;
+}
+
+
+/* ========================================== 
+	For Miscelleneous GUI Element
+   ========================================== */
+/* Background of Layer name etc :  レイヤー名とかの背景 */
+QTabWidget QAbstractItemView{
+	background:#335;
+}
+/* Misc space :  すみっこの場所 */
+QAbstractScrollArea{ /*background:#800;*/  }
+
+
+/* ToolBar : ツールバー */
+QToolBar{ background-color:#666; }
+
+/* Status Bar :ステータスバー */
+QStatusBar{ border: 3px solid #556;border-top-color:#999;}
+
+
+/* Selection Hi-light : 大抵の選択要素 */
+*::item:selected{ background-color:#550;color:#cc0; }
+
+
+/* Separator :  セパレータ */
+QMainWindow::separator{
+	background-color:#999;
+	border: 2px solid #444;
+	border-top-color:#abc;
+	border-bottom-color:#445;
+}
+
+
+/* ScrollBar and Handle : スクロールバー */
+QScrollBar:vertical,QScrollBar:horizontal{background-color:#555; }
+QScrollBar::handle:horizontal,QScrollBar::handle:vertical{
+	background-color:#777;border: 1px solid #333; 
+}
+
+/* ========================================== 
+	Debug
+   ========================================== */
+/*  Frame Element (for Debug) */
+/*
+QFrame{
+	 border: 2px solid #aabbcc;
+}
+*/
